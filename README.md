@@ -1,28 +1,33 @@
-# Linear/Multiple Regression and Logistic Regression Models
+# Diabetes Prediction: From-Scratch Linear & Logistic Regression
 
-A Python implementation of linear and logistic regression classification models without using machine learning libraries to implement said models.
+Implemented linear regression (Normal Equation) and logistic regression (gradient descent + sigmoid) from scratch using only NumPy/Pandas, with a focus on understanding the underlying math.
 
-*Exception:* `scikit-learn` was only used for train-test data splitting.
+**Result:** Logistic regression reached **75.3% accuracy** on the test set.
 
-## Features
-- **Linear Models:** Single-variable linear regression and multiple linear regression using the closed-form **Normal Equation** \(\theta = (X^T X)^{-1} X^T y\).
-- **Logistic Regression:** Classification model using the sigmoid function and gradient descent optimization.
-- **Error & Optimization:** Implements standard squared error cost for regression and cross-entropy log loss for classification. For classification, the training and test sets were normalized with the z-score formula to prevent data leakage.
+## Problem
+The Pima Indians Diabetes dataset is primarily used for binary classification (diabetic vs not). I first explored multiple linear regression to predict continuous Glucose levels, then built a proper logistic regression classifier for the Outcome variable.
 
-## Technologies Used
+## Approach
+- Multiple linear regression via closed-form Normal Equation
+- Logistic regression with sigmoid + gradient descent + binary cross-entropy
+- Proper train/test split and scaling (fit on train only to avoid leakage)
+- Manual confusion matrix and evaluation
 
-- **Language:** Python 3.8+
-- **Array Modeling:** `numpy` (matrix operations)
-- **Data Manipulation:** `pandas` (dataframes and cleaning)
-- **Data Visualization:** `matplotlib` (graph plotting)
+## Results
+- Logistic regression test accuracy: **75.32%**
+- Confusion matrix breakdown: TN 92 | TP 24 | FP 8 | FN 30
+- DiabetesPedigreeFunction showed the strongest relationship with Glucose in the linear model
 
-## Dataset
+## How to Run
+1. Clone the repo
+2. `pip install -r requirements.txt`
+3. Place `diabetes.csv` in the working directory
+4. Run the notebook
 
-This project uses the **Diabetes Database** sourced from [Kaggle](https://www.kaggle.com/code/azratuni/diabetes-database-linear-regression/input). 
+## Tech Stack
+Python, NumPy, Pandas, Matplotlib (scikit-learn only for train_test_split)
 
----
-
-## Technical & Mathematical Summary
-- **Linear Regression Cost & Gradients:** Uses squared error $J(w,b) = \frac{1}{2m} \sum (f_{w,b}(x^{(i)}) - y^{(i)})^2$ and gradient descent parameter updates.
-- **Multiple Regression (Normal Equation):** Uses multiple linear regression in 1 step by taking the inverse of the matrix.
-- **Logistic Regression:** Uses the sigmoid function to output predictions $g(z) = \frac{1}{1 + e^{-z}}$ and uses an iterative approach (gradient descent) since no closed-form solution exists. Uses cross-entropy log loss to evaluate the model's errors.
+## Limitations & Next Steps
+- No hyperparameter tuning or regularization
+- Simple threshold of 0.5
+- Could add feature engineering

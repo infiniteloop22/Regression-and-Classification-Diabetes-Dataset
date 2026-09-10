@@ -20,9 +20,9 @@ The Pima Indians Diabetes dataset is primarily used for binary classification (d
 
 ## How to Run
 1. Clone the repo
-2. `pip install numpy pandas matplotlib scikit-learn`
+2. `pip install -r requirements.txt`
 3. Place `diabetes.csv` in the working directory
-4. Run the notebook (or the relevant cells)
+4. Run the notebook
 
 ## Tech Stack
 Python, NumPy, Pandas, Matplotlib (scikit-learn only for train_test_split)
@@ -30,4 +30,4 @@ Python, NumPy, Pandas, Matplotlib (scikit-learn only for train_test_split)
 ## Limitations & Next Steps
 - No hyperparameter tuning or regularization
 - Simple threshold of 0.5
-- Could add more feature engineering, cross-validation, and comparison against scikit-learn’s implementations
+- Could add feature engineering

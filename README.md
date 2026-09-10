@@ -5,12 +5,12 @@ Implemented linear regression (Normal Equation) and logistic regression (gradien
 **Result:** Logistic regression reached **75.3% accuracy** on the test set.
 
 ## Problem
-The Pima Indians Diabetes dataset is primarily used for binary classification (diabetic vs not). I first explored multiple linear regression to predict continuous Glucose levels, then built a proper logistic regression classifier for the Outcome variable.
+The Pima Indians Diabetes dataset is primarily used for binary classification (diabetic vs not). I first explored single variable linear regression, then multiple linear regression to predict continuous Glucose levels, then built a proper logistic regression classifier for the Outcome variable.
 
 ## Approach
 - Multiple linear regression via closed-form Normal Equation
 - Logistic regression with sigmoid + gradient descent + binary cross-entropy
-- Proper train/test split and scaling (fit on train only to avoid leakage)
+- Train/test split and scaling.
 - Manual confusion matrix and evaluation
 
 ## Results
